@@ -9,7 +9,7 @@ def exists():
 
 @check50.check(exists)
 def compile():
-    """ biên dịch tien-di.c """
+    """ biên dịch box """
     check50.c.compile("box.c", lcs50=True)
 
 @check50.check(compile)
