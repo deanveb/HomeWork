@@ -21,8 +21,9 @@ int main() {
     if (buffer[text[i]] == true) {
       continue;
     }
-
-    buffer[text[i]] = true;
+    if (text[i] != ' ') {
+      buffer[text[i]] = true;
+    }
     result[result_length] = text[i];
     result_length++;
   }

@@ -13,7 +13,7 @@ int main() {
                                  10000, 20000, 50000, 100000, 200000, 500000};
   int count = 0;
   int currentCashType = MAX_CASH_TYPE - 1;
-  while (cash > 0) {
+  while (cash >= 100) {
     if (cash < cashType[currentCashType]) {
       currentCashType--;
       continue;

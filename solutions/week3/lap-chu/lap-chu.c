@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include <string.h>
 
-#define WORD_COUNT 26
+#define WORD_COUNT 255
 
 bool isAllWords(string input);
 
@@ -11,7 +11,7 @@ int main(void) {
   string text = "";
   do {
     text = get_string("message: ");
-  } while (strlen(text) <= 0 || !isAllWords(text));
+  } while (strlen(text) <= 0);
 
   int buffer[WORD_COUNT];
   // clear garbage value
@@ -20,14 +20,14 @@ int main(void) {
   }
 
   for (int i = 0, n = strlen(text); i < n; i++) {
-    buffer[tolower(text[i]) - 97]++;
+    buffer[tolower(text[i])]++;
   }
 
   for (int i = 0; i < WORD_COUNT; i++) {
-    if (buffer[i] <= 0) {
+    if (buffer[i] <= 0 || !isalpha(i)) {
       continue;
     }
-    printf("%c:%d ", i + 97, buffer[i]);
+    printf("%c:%d ", i, buffer[i]);
   }
   printf("\n");
 
