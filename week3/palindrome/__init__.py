@@ -17,9 +17,24 @@ def check_zero():
     check50.run("./palindrome").stdin("").reject()
 
 @check50.check(compile)
+def check_whitespace():
+    """ kiểm tra white_space """
+    check50.run("./palindrome").stdin("hello world").reject()
+
+@check50.check(compile)
+def check_number():
+    """ kiểm tra số """
+    check50.run("./palindrome").stdin("12345").reject()
+
+@check50.check(compile)
+def check_special():
+    """ kiểm tra ký tự đặc biệt """
+    check50.run("./palindrome").stdin("hello;:!@#$%^&").reject()
+
+@check50.check(compile)
 def check_1():
     """ test 1"""
-    out = check50.run("./palindrome").stdin("abba").stdout()
+    out = check50.run("./palindrome").stdin("ABba").stdout()
     correct = "YES"
     test_palindrome(correct, out)
 

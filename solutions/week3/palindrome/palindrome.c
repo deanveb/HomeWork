@@ -23,7 +23,7 @@ int main(void) {
 
 bool isPalindrome(string input) {
   for (int i = 0, n = strlen(input); i < n / 2; i++) {
-    if (input[i] != input[n - i - 1]) {
+    if (tolower(input[i]) != tolower(input[n - i - 1])) {
       return false;
     }
   }
