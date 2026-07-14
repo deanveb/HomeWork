@@ -58,4 +58,4 @@ def check_5():
 
 def test_tien_viet(correct, out):
     if (correct != out):
-        check50.Mismatch(correct, out)
+        raise check50.Mismatch(correct, out)

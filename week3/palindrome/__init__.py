@@ -89,4 +89,4 @@ def check_8():
 
 def test_palindrome(correct, out):
     if (correct != out):
-        check50.Mismatch(correct, out)
+        raise check50.Mismatch(correct, out)

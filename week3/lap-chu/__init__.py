@@ -66,4 +66,4 @@ def test_lap_chu(correct, out):
                 help = "Nhớ là không phân biệt chữ hoa, chữ thường"
         if (any(char in out for char in set(punctuation + "\n"))):
             help = "Nhớ là phải bỏ qua các ký tự đặt biệt"
-        check50.Mismatch(correct, out, help=help)
+        raise check50.Mismatch(correct, out, help=help)

@@ -42,4 +42,4 @@ def check_3():
 
 def test_vuong_xien(correct, out):
     if (correct != out):
-        check50.Mismatch(correct, out)
+        raise check50.Mismatch(correct, out)

@@ -48,4 +48,4 @@ def check_4():
 
 def test_tam_giac_pascal(correct, out):
     if (correct != out):
-        check50.Mismatch(correct, out)
+        raise check50.Mismatch(correct, out)

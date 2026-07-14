@@ -39,4 +39,4 @@ def check_3():
 
 def test_duy_nhat(correct, out):
     if (correct != out):
-        check50.Mismatch(correct, out)
+        raise check50.Mismatch(correct, out)
