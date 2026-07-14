@@ -27,7 +27,7 @@ def check_1():
 def check_2():
     """ test 2 """
     out = check50.run("./duy-nhat").stdin("12345 123TisaTest wow").stdout()
-    correct = "12345 Tisaet wow\n"
+    correct = "12345 Tisaet wo\n"
     test_duy_nhat(correct, out)
 
 @check50.check(compile)

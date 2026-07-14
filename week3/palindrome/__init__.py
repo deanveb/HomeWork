@@ -35,56 +35,56 @@ def check_special():
 def check_1():
     """ test 1"""
     out = check50.run("./palindrome").stdin("ABba").stdout()
-    correct = "YES"
+    correct = "YES\n"
     test_palindrome(correct, out)
 
 @check50.check(compile)
 def check_2():
     """ test 2"""
     out = check50.run("./palindrome").stdin("noodle").stdout()
-    correct = "NO"
+    correct = "NO\n"
     test_palindrome(correct, out)
 
 @check50.check(compile)
 def check_3():
     """ test 3"""
     out = check50.run("./palindrome").stdin("racecar").stdout()
-    correct = "YES"
+    correct = "YES\n"
     test_palindrome(correct, out)
 
 @check50.check(compile)
 def check_4():
     """ test 4"""
     out = check50.run("./palindrome").stdin("funny").stdout()
-    correct = "NO"
+    correct = "NO\n"
     test_palindrome(correct, out)
 
 @check50.check(compile)
 def check_5():
     """ test 5"""
     out = check50.run("./palindrome").stdin("madam").stdout()
-    correct = "YES"
+    correct = "YES\n"
     test_palindrome(correct, out)
 
 @check50.check(compile)
 def check_6():
     """ test 6"""
     out = check50.run("./palindrome").stdin("corny").stdout()
-    correct = "NO"
+    correct = "NO\n"
     test_palindrome(correct, out)
 
 @check50.check(compile)
 def check_7():
     """ test 7"""
     out = check50.run("./palindrome").stdin("level").stdout()
-    correct = "YES"
+    correct = "YES\n"
     test_palindrome(correct, out)
 
 @check50.check(compile)
 def check_8():
     """ test 8"""
     out = check50.run("./palindrome").stdin("radar").stdout()
-    correct = "YES"
+    correct = "YES\n"
     test_palindrome(correct, out)
 
 def test_palindrome(correct, out):

@@ -31,7 +31,7 @@ def check_special():
 def check_special_and_words():
     """ Kiểm tra nhập ký tự đặt biệt cùng với chữ """
     out = check50.run("./lap-chu").stdin("Hello;").stdout()
-    correct = "e:1 h:1 l:2 o:1\n"
+    correct = "e:1 h:1 l:2 o:1 \n"
     test_lap_chu(correct, out)
 
 
@@ -39,31 +39,33 @@ def check_special_and_words():
 def test_1():
     """ Kiểm tra nhập Hello World """
     out = check50.run("./lap-chu").stdin("Hello World").stdout()
-    correct = "d:1 e:1 h:1 l:3 o:2 r:1 w:1\n"
+    correct = "d:1 e:1 h:1 l:3 o:2 r:1 w:1 \n"
     test_lap_chu(correct, out)
 
 @check50.check(compile)
 def test_2():
     """ Kiểm tra test 1 """
     out = check50.run("./lap-chu").stdin("Congrats on passing this test").stdout()
-    correct = "a:2 c:1 e:1 g:2 h:1 i:2 n:3 o:2 p:1 r:1 s:5 t:4\n"
+    correct = "a:2 c:1 e:1 g:2 h:1 i:2 n:3 o:2 p:1 r:1 s:5 t:4 \n"
     test_lap_chu(correct, out)
 
 @check50.check(compile)
 def test_3():
     """ Kiểm tra test 2 """
     out = check50.run("./lap-chu").stdin("Are sure you want to continue?").stdout()
-    correct = "a:2 c:1 e:3 i:1 n:3 o:3 r:2 s:1 t:3 u:3 w:1 y:1"
+    correct = "a:2 c:1 e:3 i:1 n:3 o:3 r:2 s:1 t:3 u:3 w:1 y:1 \n"
     test_lap_chu(correct, out)
 
 def test_lap_chu(correct, out):
     if (out != correct):
         help = ""
-        if (out[-1] != "\n"):\
+        if (out[-1] != "\n"):
            help = "Có quên xuống hàng không"
+        if (out[-2:] == " \n"):
+            help = "Có thêm dư dấu cách khúc cuối trước khi xuống hàng không"
         for char in out:
             if (char.isupper()):
                 help = "Nhớ là không phân biệt chữ hoa, chữ thường"
-        if (any(char in out for char in set(punctuation + "\n"))):
-            help = "Nhớ là phải bỏ qua các ký tự đặt biệt"
+        # if (any(char in out for char in set(punctuation + "\n"))):
+        #     help = "Nhớ là phải bỏ qua các ký tự đặt biệt"
         raise check50.Mismatch(correct, out, help=help)
